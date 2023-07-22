@@ -20,6 +20,6 @@ jobs:
           SIGA_USERNAME: ${{ secrets.SIGA_USERNAME }}
           SIGA_PASSWORD: ${{ secrets.SIGA_PASSWORD }}
       - run: yarn build
-      - run: yarn publish // for Yarn version 1, use `yarn publish` instead
+      - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
