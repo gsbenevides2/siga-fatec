@@ -1,0 +1,39 @@
+{
+  "subjects": [
+    {
+      "code": "AGR101",
+      "subject": "Gestão de Equipes",
+      "finalMedia": 0,
+      "numberAbsences": 0,
+      "frequency": 0
+    },
+    {
+      "code": "CEE002",
+      "subject": "Empreendedorismo",
+      "finalMedia": 0,
+      "numberAbsences": 0,
+      "frequency": 0
+    },
+    {
+      "code": "HSO003",
+      "subject": "Ética e Responsabilidade Profissional",
+      "finalMedia": 0,
+      "numberAbsences": 0,
+      "frequency": 0
+    },
+    {
+      "code": "ITE002",
+      "subject": "Tópicos Especiais em Informática (Escolha 2)",
+      "finalMedia": 0,
+      "numberAbsences": 0,
+      "frequency": 0
+    },
+    {
+      "code": "LIN500",
+      "subject": "Inglês V",
+      "finalMedia": 0,
+      "numberAbsences": 0,
+      "frequency": 0
+    }
+  ]
+}

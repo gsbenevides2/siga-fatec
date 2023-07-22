@@ -1,0 +1,355 @@
+{
+  "subjects": [
+    {
+      "code": "AAG001",
+      "name": "Administração Geral",
+      "period": "20212",
+      "approved": true,
+      "average": "10",
+      "frequency": "100",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "AGO005",
+      "name": "Gestão de Projetos",
+      "period": "20231",
+      "approved": true,
+      "average": "8.5",
+      "frequency": "100",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "AGR101",
+      "name": "Gestão de Equipes",
+      "period": "20232",
+      "approved": false,
+      "average": "0",
+      "frequency": "0",
+      "observation": "Em Curso"
+    },
+    {
+      "code": "CCG001",
+      "name": "Contabilidade",
+      "period": "20221",
+      "approved": true,
+      "average": "8.3",
+      "frequency": "92.5",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "CEE002",
+      "name": "Empreendedorismo",
+      "period": "20232",
+      "approved": false,
+      "average": "0",
+      "frequency": "0",
+      "observation": "Em Curso"
+    },
+    {
+      "code": "CEF100",
+      "name": "Economia e Finanças",
+      "period": "20222",
+      "approved": true,
+      "average": "8.7",
+      "frequency": "100",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "HSO003",
+      "name": "Ética e Responsabilidade Profissional",
+      "period": "20232",
+      "approved": false,
+      "average": "0",
+      "frequency": "0",
+      "observation": "Em Curso"
+    },
+    {
+      "code": "HST002",
+      "name": "Sociedade e Tecnologia",
+      "period": "20231",
+      "approved": true,
+      "average": "8.6",
+      "frequency": "100",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "IAC001",
+      "name": "Arquitetura e Organização de Computadores",
+      "period": "20212",
+      "approved": true,
+      "average": "9",
+      "frequency": "100",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "IAL002",
+      "name": "Algoritmos e Lógica de Programação",
+      "period": "20212",
+      "approved": true,
+      "average": "9.4",
+      "frequency": "100",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "IBD002",
+      "name": "Banco de Dados",
+      "period": "20222",
+      "approved": true,
+      "average": "8.5",
+      "frequency": "100",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "IBD100",
+      "name": "Laboratório de Banco de Dados (Escolha 1)",
+      "period": "20231",
+      "approved": true,
+      "average": "10",
+      "frequency": "100",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "IED001",
+      "name": "Estruturas de Dados",
+      "period": "20222",
+      "approved": true,
+      "average": "9.8",
+      "frequency": "95",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "IES100",
+      "name": "Engenharia de Software I",
+      "period": "20221",
+      "approved": true,
+      "average": "9",
+      "frequency": "100",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "IES200",
+      "name": "Engenharia de Software II",
+      "period": "20222",
+      "approved": true,
+      "average": "8",
+      "frequency": "95",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "IES300",
+      "name": "Engenharia de Software III",
+      "period": "20231",
+      "approved": true,
+      "average": "10",
+      "frequency": "80",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "IHC001",
+      "name": "Interação Humano Computador",
+      "period": "20222",
+      "approved": true,
+      "average": "7.5",
+      "frequency": "95",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "IHW100",
+      "name": "Laboratório de Hardware",
+      "period": "20221",
+      "approved": true,
+      "average": "8.5",
+      "frequency": "95",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "ILM001",
+      "name": "Programação em Microinformática",
+      "period": "20212",
+      "approved": true,
+      "average": "8",
+      "frequency": "97.5",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "ILP007",
+      "name": "Programação Orientada a Objetos",
+      "period": "20231",
+      "approved": true,
+      "average": "10",
+      "frequency": "95",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "ILP010",
+      "name": "Linguagem de Programação",
+      "period": "20221",
+      "approved": true,
+      "average": "7.5",
+      "frequency": "95",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "ILP530",
+      "name": "Eletiva - Linguagem de Programação III - Linguagem JAVA",
+      "period": "20222",
+      "approved": true,
+      "average": "9.3",
+      "frequency": "97.5",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "ILP540",
+      "name": "Eletiva - Linguagem de Programação IV - INTERNET",
+      "period": "20221",
+      "approved": true,
+      "average": "10",
+      "frequency": "100",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "IRC008",
+      "name": "Redes de Computadores",
+      "period": "20231",
+      "approved": true,
+      "average": "9.2",
+      "frequency": "95",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "ISG003",
+      "name": "Segurança da Informação",
+      "period": "20231",
+      "approved": true,
+      "average": "8.5",
+      "frequency": "100",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "ISI002",
+      "name": "Sistemas de Informação",
+      "period": "20212",
+      "approved": true,
+      "average": "9.2",
+      "frequency": "95",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "ISO100",
+      "name": "Sistemas Operacionais I",
+      "period": "20221",
+      "approved": true,
+      "average": "10",
+      "frequency": "95",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "ISO200",
+      "name": "Sistemas Operacionais II",
+      "period": "20222",
+      "approved": true,
+      "average": "9",
+      "frequency": "100",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "ITE002",
+      "name": "Tópicos Especiais em Informática (Escolha 2)",
+      "period": "20232",
+      "approved": false,
+      "average": "0",
+      "frequency": "0",
+      "observation": "Em Curso"
+    },
+    {
+      "code": "LIN100",
+      "name": "Inglês I",
+      "period": "20212",
+      "approved": true,
+      "average": "8.2",
+      "frequency": "100",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "LIN200",
+      "name": "Inglês II",
+      "period": "20221",
+      "approved": true,
+      "average": "8.9",
+      "frequency": "95",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "LIN300",
+      "name": "Inglês III",
+      "period": "20222",
+      "approved": true,
+      "average": "7.8",
+      "frequency": "95",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "LIN400",
+      "name": "Inglês IV",
+      "period": "20231",
+      "approved": true,
+      "average": "7.1",
+      "frequency": "95",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "LIN500",
+      "name": "Inglês V",
+      "period": "20232",
+      "approved": false,
+      "average": "0",
+      "frequency": "0",
+      "observation": "Em Curso"
+    },
+    {
+      "code": "LPO001",
+      "name": "Comunicação e Expressão",
+      "period": "20212",
+      "approved": true,
+      "average": "9.2",
+      "frequency": "100",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "MCA002",
+      "name": "Cálculo",
+      "period": "20221",
+      "approved": true,
+      "average": "9.2",
+      "frequency": "100",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "MET100",
+      "name": "Estatística Aplicada",
+      "period": "20221",
+      "approved": true,
+      "average": "7.8",
+      "frequency": "97.5",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "MMD001",
+      "name": "Matemática Discreta",
+      "period": "20212",
+      "approved": true,
+      "average": "9.2",
+      "frequency": "100",
+      "observation": "Aprovado por Nota e Frequência"
+    },
+    {
+      "code": "MPL001",
+      "name": "Programação Linear e Aplicações",
+      "period": "20222",
+      "approved": true,
+      "average": "8.2",
+      "frequency": "100",
+      "observation": "Aprovado por Nota e Frequência"
+    }
+  ]
+}

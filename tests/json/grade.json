@@ -1,0 +1,57 @@
+{
+  "subjects": [
+    {
+      "code": "AGR101",
+      "name": "Gestão de Equipes - 2hs/aula",
+      "class": "A",
+      "teacher": "ROMULO MARTINS GUTIERREZ"
+    },
+    {
+      "code": "CEE002",
+      "name": "Empreendedorismo - 2hs/aula",
+      "class": "A",
+      "teacher": "EDSON DEMETRIO LEAL"
+    },
+    {
+      "code": "HSO003",
+      "name": "Ética e Responsabilidade Profissional - 2hs/aula",
+      "class": "A",
+      "teacher": "CARLA ALESSANDRA BRANCA RAMOS SILVA AGUIAR"
+    },
+    {
+      "code": "ITE002",
+      "name": "Tópicos Especiais em Informática (Escolha 2) - 4hs/aula",
+      "class": "A",
+      "teacher": "LEANDRO LUQUE"
+    },
+    {
+      "code": "LIN500",
+      "name": "Inglês V - 2hs/aula",
+      "class": "A",
+      "teacher": "VALDITE PEREIRA FUGA"
+    }
+  ],
+  "daysOfWeek": {
+    "monday": [
+      { "classTime": "19:00-19:50", "classCode": "HSO003" },
+      { "classTime": "19:50-20:40", "classCode": "HSO003" },
+      { "classTime": "21:00-21:50", "classCode": "LIN500" },
+      { "classTime": "21:50-22:40", "classCode": "LIN500" }
+    ],
+    "tuesday": [],
+    "wednesday": [
+      { "classTime": "19:00-19:50", "classCode": "ITE002" },
+      { "classTime": "19:50-20:40", "classCode": "ITE002" },
+      { "classTime": "21:00-21:50", "classCode": "ITE002" },
+      { "classTime": "21:50-22:40", "classCode": "ITE002" }
+    ],
+    "thursday": [
+      { "classTime": "21:00-21:50", "classCode": "AGR101" },
+      { "classTime": "21:50-22:40", "classCode": "AGR101" },
+      { "classTime": "19:00-19:50", "classCode": "CEE002" },
+      { "classTime": "19:50-20:40", "classCode": "CEE002" }
+    ],
+    "friday": [],
+    "saturday": []
+  }
+}
