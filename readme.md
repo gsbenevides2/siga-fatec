@@ -20,7 +20,7 @@ Um SDK que possibilita fazer a raspagem de dados do site do Sistema Integrado de
 </p-->
 
 <h2>📖 Documentação</h2>
-<p align="justify">A documentação está disponível em: <a href="docs/README.md">/docs/README.md</a>.</p>
+<p align="justify">A documentação está disponível em: <a href="https://siga-fatec.gui.dev.br">HTTPS://siga-fatec.gui.dev.br</a>.</p>
 
 <h2>👨‍💻 Tecnologias Utilizadas</h2>
 <ul>
