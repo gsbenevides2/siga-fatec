@@ -14,12 +14,12 @@ jobs:
           registry-url: "https://registry.npmjs.org"
           # Defaults to the user or organization that owns the workflow file
           scope: "@gsbenevides2"
-      - run: yarn
-      - run: yarn test
+      - run: npm
+      - run: npm run test
         env:
           SIGA_USERNAME: ${{ secrets.SIGA_USERNAME }}
           SIGA_PASSWORD: ${{ secrets.SIGA_PASSWORD }}
-      - run: yarn build
-      - run: yarn publish
+      - run: npm run build
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
