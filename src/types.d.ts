@@ -64,3 +64,8 @@ export interface PartialNoteSubject {
   numberAbsences: string;
   frequency: string;
 }
+
+export interface LoginParams {
+  username: string;
+  password: string;
+}

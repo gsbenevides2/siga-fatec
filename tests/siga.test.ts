@@ -12,7 +12,7 @@ const { SIGA_USERNAME: username, SIGA_PASSWORD: password } = process.env as {
 
 const timeOut = 100000;
 
-describe.skip("Siga: Testes de integração", () => {
+describe("Siga: Testes de integração", () => {
   it(
     "Esperando que o login seja um sucesso",
     async () => {

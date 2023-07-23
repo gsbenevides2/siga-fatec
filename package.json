@@ -20,7 +20,8 @@
     "format": "prettier --write ./src ./tests",
     "format:check": "prettier --check ./src ./tests",
     "test:watch": "jest --watchAll",
-    "test:coverage": "jest --coverage --verbose"
+    "test:coverage": "jest --coverage --verbose",
+    "generate-docs": "typedoc --out docs src/index.ts src/types.d.ts "
   },
   "devDependencies": {
     "@jest/globals": "^29.6.1",
@@ -39,6 +40,8 @@
     "jest-mock-axios": "^4.7.2",
     "prettier": "3.0.0",
     "ts-jest": "^29.1.1",
+    "typedoc": "^0.24.8",
+    "typedoc-plugin-markdown": "^3.15.3",
     "typescript": "*"
   },
   "dependencies": {

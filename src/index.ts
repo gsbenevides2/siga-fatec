@@ -4,14 +4,10 @@ import {
   type PartialAbsence,
   type Grade,
   type PartialNoteSubject,
+  type LoginParams,
 } from "./types";
 import * as requestMaker from "./requestMaker";
 import * as htmlParser from "./htmlParser";
-
-interface LoginParams {
-  username: string;
-  password: string;
-}
 
 export class Siga {
   private readonly cookie: string;
