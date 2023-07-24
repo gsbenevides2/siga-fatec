@@ -18,6 +18,7 @@ export async function requestPartialAbsences({
     headers: {
       Cookie: cookie,
     },
+    withCredentials: true,
   });
 
   const responseDocument = parse(response.data);

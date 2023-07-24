@@ -17,7 +17,9 @@ export async function requestLogin({
   username,
   password,
 }: RequestLoginParams): Promise<RequestLoginResponse> {
-  const response = await axios.get(sigaEndpoint);
+  const response = await axios.get(sigaEndpoint, {
+    withCredentials: true,
+  });
 
   // Pegando os cookies da sessão não autenticada
   const cookies = response.headers["set-cookie"];
@@ -37,6 +39,7 @@ export async function requestLogin({
       Cookie: cookies[0].split(";")[0] + ";",
       "content-type": "application/x-www-form-urlencoded",
     },
+    withCredentials: true,
   });
 
   // Pegando a pagina a resposta da requisição de login
