@@ -6,7 +6,6 @@ import { readFileSync } from "fs";
 const username = "33429664675";
 const password = "Se eu soubesse que ia ser assim, tinha ficado em casa";
 
-
 const mock = new MockAdapter(axios);
 const sigaAlunoEndpoint = "https://siga.cps.sp.gov.br/ALUNO/login.aspx";
 const sigaHistoricoEndpoint = "https://siga.cps.sp.gov.br/ALUNO/historico.aspx";
@@ -31,9 +30,8 @@ describe("RequestMaker", () => {
       password,
     });
 
-    expect(sessionData).toHaveProperty("cookies");
-    expect(sessionData.cookies).toHaveLength(1);
-    expect(sessionData.cookies[0]).toMatch(/ASP.NET_SessionId=.+?;/);
+    expect(sessionData).toHaveProperty("cookie");
+    expect(sessionData.cookie).toMatch(/ASP.NET_SessionId=.+?;/);
     expect(sessionData).toHaveProperty("parsedHtml");
     expect(sessionData.parsedHtml).toHaveProperty("querySelector");
   });
@@ -45,7 +43,7 @@ describe("RequestMaker", () => {
     await expect(
       requestMaker.requestLogin({
         username,
-        password
+        password,
       }),
     ).rejects.toThrowError("Não foi possível obter os cookies");
   });
@@ -62,7 +60,7 @@ describe("RequestMaker", () => {
     await expect(
       requestMaker.requestLogin({
         username,
-        password
+        password,
       }),
     ).rejects.toThrowError("Não foi possível obter a meta tag Description");
   });
@@ -79,7 +77,7 @@ describe("RequestMaker", () => {
     await expect(
       requestMaker.requestLogin({
         username,
-        password
+        password,
       }),
     ).rejects.toThrowError(
       "Não foi possível obter o conteúdo da meta tag Description",
@@ -98,7 +96,7 @@ describe("RequestMaker", () => {
     await expect(
       requestMaker.requestLogin({
         username,
-        password
+        password,
       }),
     ).rejects.toThrowError(
       "Não foi possível fazer login. Verifique os dados informados",

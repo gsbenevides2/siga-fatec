@@ -7,16 +7,14 @@ const sigaEndpoint = "https://siga.cps.sp.gov.br/ALUNO/login.aspx";
 export interface RequestLoginParams {
   username: string;
   password: string;
+  cookie?: string;
 }
 export interface RequestLoginResponse {
-  cookies: string[];
+  cookie: string;
   parsedHtml: HTMLElement;
 }
 
-export async function requestLogin({
-  username,
-  password,
-}: RequestLoginParams): Promise<RequestLoginResponse> {
+async function getCookie(): Promise<string> {
   const response = await axios.get(sigaEndpoint, {
     withCredentials: true,
   });
@@ -24,6 +22,17 @@ export async function requestLogin({
   // Pegando os cookies da sessão não autenticada
   const cookies = response.headers["set-cookie"];
   if (cookies == null) throw new Error("Não foi possível obter os cookies");
+
+  return cookies[0].split(";")[0] + ";";
+}
+
+export async function requestLogin({
+  username,
+  password,
+  cookie,
+}: RequestLoginParams): Promise<RequestLoginResponse> {
+  // Pegando os cookies da sessão não autenticada
+  if (cookie == null) cookie = await getCookie();
 
   // Montando os dados para fazer uma nova requisição de login para autenticar o cookie de sessão
   const data = qs.stringify({
@@ -36,7 +45,7 @@ export async function requestLogin({
   // Fazendo uma nova requisição de login para autenticar o cookie de sessão
   const loginResponse = await axios.post(sigaEndpoint, data, {
     headers: {
-      Cookie: cookies[0].split(";")[0] + ";",
+      Cookie: cookie,
       "content-type": "application/x-www-form-urlencoded",
     },
     withCredentials: true,
@@ -56,7 +65,7 @@ export async function requestLogin({
     );
   if (metaNameContent.includes("home")) {
     // Se a página de resposta contém a palavra "home" no meta name="Description" então o login foi um sucesso
-    return { cookies, parsedHtml: responseDocument };
+    return { cookie, parsedHtml: responseDocument };
   }
   throw new Error(
     "Não foi possível fazer login. Verifique os dados informados",

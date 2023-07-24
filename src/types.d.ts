@@ -68,4 +68,5 @@ export interface PartialNoteSubject {
 export interface LoginParams {
   username: string;
   password: string;
+  cookie?: string;
 }

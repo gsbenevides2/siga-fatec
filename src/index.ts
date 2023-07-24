@@ -21,13 +21,15 @@ export class Siga {
   public static async login({
     username,
     password,
+    cookie,
   }: LoginParams): Promise<Siga> {
-    const { cookies, parsedHtml } = await requestMaker.requestLogin({
+    const response = await requestMaker.requestLogin({
       username,
       password,
+      cookie,
     });
-    const studentData = htmlParser.parseHomePage(parsedHtml);
-    return new Siga(cookies[0], studentData);
+    const studentData = htmlParser.parseHomePage(response.parsedHtml);
+    return new Siga(response.cookie, studentData);
   }
 
   public getStudentData(): StudentData {

@@ -1,6 +1,6 @@
 {
   "name": "siga-fatec",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "dist/index.js",
   "author": {
     "name": "Guilherme da Silva Benevides",
@@ -8,8 +8,8 @@
     "url": "https://gui.dev.br"
   },
   "engines": {
-    "node": "18.16.1",
-    "yarn": "1.22.19"
+    "node": "18",
+    "yarn": "1.22"
   },
   "license": "MIT",
   "scripts": {
