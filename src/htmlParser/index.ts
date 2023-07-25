@@ -4,6 +4,7 @@ import { parseGradePage } from "./grade";
 import { parsePartialAbsencesPage } from "./partialAbsences";
 import { parsePartialNotesPage } from "./partialNotes";
 import { parseExamsCalendarPage } from "./examsCalendar";
+import { parseTeachingPlanPage } from "./teachingPlan";
 
 export {
   parseHomePage,
@@ -12,4 +13,5 @@ export {
   parsePartialAbsencesPage,
   parsePartialNotesPage,
   parseExamsCalendarPage,
+  parseTeachingPlanPage,
 };

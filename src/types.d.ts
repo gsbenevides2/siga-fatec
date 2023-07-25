@@ -83,3 +83,16 @@ export interface ExamSubject {
 }
 
 
+interface TeachingPlan {
+  subjectName: string;
+  subjectCode: string;
+  classLetter: string;
+  professorName: string;
+  periodOfOffer: string;
+  subjectSyllabus: string;
+  subjectObjective: string;
+  subjectWeekLoad: string;
+  subjectTheoreticalLoad: string;
+  subjectPracticalLoad: string;
+  subjectTotalLoad: string;
+}

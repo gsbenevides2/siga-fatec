@@ -1,8 +1,12 @@
 import { type HTMLElement } from "node-html-parser";
 
-export function fetchFirstSpanText(spans: HTMLElement[], id: string): string {
+export function fetchSpanText(
+  spans: HTMLElement[],
+  id: string,
+  pos = 0,
+): string {
   const span = spans.filter((span) => span.getAttribute("id")?.includes(id));
-  return span[0].text.trim();
+  return span[pos].text.trim();
 }
 
 export function fetchGXStateInputValue(

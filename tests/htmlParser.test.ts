@@ -122,4 +122,14 @@ describe("HtmlParser", () => {
     );
     expect(result).toMatchObject(content);
   });
+
+  it("Fazendo captura de dados da página de plano de ensino", () => {
+    const html = readFileSync("tests/html/teachingPlan.html", "utf-8");
+    const parsedHtml = parse(html);
+    const result = htmlParser.parseTeachingPlanPage(parsedHtml);
+    const content = JSON.parse(
+      readFileSync("tests/json/teachingPlan.json", "utf-8").toString(),
+    );
+    expect(result).toMatchObject(content);
+  });
 });

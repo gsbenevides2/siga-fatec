@@ -1,5 +1,5 @@
 import { type HTMLElement } from "node-html-parser";
-import { fetchFirstSpanText } from "../utils";
+import { fetchSpanText } from "../utils";
 import { type StudentData } from "../types";
 
 type HomePageParsed = StudentData;
@@ -7,22 +7,22 @@ type HomePageParsed = StudentData;
 export function parseHomePage(page: HTMLElement): HomePageParsed {
   const spans = page.querySelectorAll("span");
 
-  const studentName = fetchFirstSpanText(spans, "PESSOALNOME")
+  const studentName = fetchSpanText(spans, "PESSOALNOME")
     .replace("-", "")
     .trim();
-  const collegeName = fetchFirstSpanText(spans, "UNIDADENOME");
-  const courseName = fetchFirstSpanText(spans, "CURSONOME");
-  const courseState = fetchFirstSpanText(spans, "SITUACAO");
-  const coursePeriod = fetchFirstSpanText(spans, "PERIODODESCRICAO");
-  const courseCycle = fetchFirstSpanText(spans, "ALUNOCURSOCICLOATUAL");
-  const RA = fetchFirstSpanText(spans, "ALUNOCURSOREGISTROACADEMICOCURSO");
-  const PP = fetchFirstSpanText(spans, "ALUNOCURSOINDICEPP");
-  const PR = fetchFirstSpanText(spans, "vACD_ALUNOCURSOINDICEPR");
-  const maxPR = fetchFirstSpanText(spans, "vMAX_ACD_ALUNOCURSOINDICEPR");
-  const cursedSemesters = fetchFirstSpanText(spans, "SEMESTRESCURSADOS");
-  const maxSemesters = fetchFirstSpanText(spans, "INTEGRALIZACAOMAX");
-  const remainingSemesters = fetchFirstSpanText(spans, "FALTA");
-  const institutionalEmail = fetchFirstSpanText(spans, "vINSTITUCIONALFATEC");
+  const collegeName = fetchSpanText(spans, "UNIDADENOME");
+  const courseName = fetchSpanText(spans, "CURSONOME");
+  const courseState = fetchSpanText(spans, "SITUACAO");
+  const coursePeriod = fetchSpanText(spans, "PERIODODESCRICAO");
+  const courseCycle = fetchSpanText(spans, "ALUNOCURSOCICLOATUAL");
+  const RA = fetchSpanText(spans, "ALUNOCURSOREGISTROACADEMICOCURSO");
+  const PP = fetchSpanText(spans, "ALUNOCURSOINDICEPP");
+  const PR = fetchSpanText(spans, "vACD_ALUNOCURSOINDICEPR");
+  const maxPR = fetchSpanText(spans, "vMAX_ACD_ALUNOCURSOINDICEPR");
+  const cursedSemesters = fetchSpanText(spans, "SEMESTRESCURSADOS");
+  const maxSemesters = fetchSpanText(spans, "INTEGRALIZACAOMAX");
+  const remainingSemesters = fetchSpanText(spans, "FALTA");
+  const institutionalEmail = fetchSpanText(spans, "vINSTITUCIONALFATEC");
   const photoDiv = page
     .querySelectorAll("div")
     .filter((div) => div.getAttribute("id")?.includes("FOTO"))[0];
