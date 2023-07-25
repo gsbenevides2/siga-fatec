@@ -12,7 +12,7 @@ export function fetchGXStateInputValue(
   const input = document.querySelector("input[name='GXState']");
   if (input == null)
     throw new Error("Não foi possível encontrar o input GXState");
-  let value = input?.getAttribute("value");
+  let value = input.getAttribute("value");
   if (value == null)
     throw new Error("Não foi possível encontrar o valor do input GXState");
 
