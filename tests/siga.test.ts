@@ -102,4 +102,19 @@ describe("Siga: Testes de integração", () => {
     },
     timeOut * 2,
   );
+
+  it(
+    "Esperando que retorne o calendário de provas",
+    async () => {
+      const siga = await Siga.login({
+        username,
+        password,
+      });
+
+      const calendar = await siga.getExamsCalendar();
+
+      expect(calendar.length).toBeGreaterThan(1);
+    },
+    timeOut * 2,
+  );
 });

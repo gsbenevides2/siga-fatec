@@ -5,6 +5,7 @@ import {
   type Grade,
   type PartialNoteSubject,
   type LoginParams,
+  type ExamSubject,
 } from "./types";
 import * as requestMaker from "./requestMaker";
 import * as htmlParser from "./htmlParser";
@@ -66,5 +67,12 @@ export class Siga {
     });
     const { subjects } = htmlParser.parsePartialNotesPage(parsedHtml);
     return subjects;
+  }
+
+  public async getExamsCalendar(): Promise<ExamSubject[]> {
+    const { parsedHtml } = await requestMaker.requestExamsCalendar({
+      cookie: this.cookie,
+    });
+    return htmlParser.parseExamsCalendarPage(parsedHtml);
   }
 }
