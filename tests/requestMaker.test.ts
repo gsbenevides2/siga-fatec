@@ -16,6 +16,8 @@ const sigaFaltasParciaisEndpoint =
 const sigaHorarioEndpoint = "https://siga.cps.sp.gov.br/ALUNO/horario.aspx";
 const sigaCalendarioProvasEndpoint =
   "https://siga.cps.sp.gov.br/ALUNO/calendarioprovas.aspx";
+const sigaPlanoDeEnsinoEndpoint =
+  "https://siga.cps.sp.gov.br/ALUNO/planoensino.aspx?AGR101";
 
 const cookie = ["ASP.NET_SessionId=1234567890; path=/; HttpOnly"];
 
@@ -156,12 +158,12 @@ describe("RequestMaker", () => {
       .onGet(sigaHorarioEndpoint)
       .reply(200, readFileSync("tests/html/grade.html", "utf-8").toString());
 
-    const fullHistoryData = await requestMaker.requestGrade({
+    const response = await requestMaker.requestGrade({
       cookie: cookie[0],
     });
 
-    expect(fullHistoryData).toHaveProperty("parsedHtml");
-    expect(fullHistoryData.parsedHtml).toHaveProperty("querySelector");
+    expect(response).toHaveProperty("parsedHtml");
+    expect(response.parsedHtml).toHaveProperty("querySelector");
   });
 
   it("Esperando que a requisição a página de calendário de provas seja um sucesso", async () => {
@@ -169,11 +171,28 @@ describe("RequestMaker", () => {
       .onGet(sigaCalendarioProvasEndpoint)
       .reply(200, readFileSync("tests/html/grade.html", "utf-8").toString());
 
-    const fullHistoryData = await requestMaker.requestExamsCalendar({
+    const response = await requestMaker.requestExamsCalendar({
       cookie: cookie[0],
     });
 
-    expect(fullHistoryData).toHaveProperty("parsedHtml");
-    expect(fullHistoryData.parsedHtml).toHaveProperty("querySelector");
+    expect(response).toHaveProperty("parsedHtml");
+    expect(response.parsedHtml).toHaveProperty("querySelector");
+  });
+
+  it("Esperando que a requisição a página de plano de ensino seja um sucesso", async () => {
+    mock
+      .onGet(sigaPlanoDeEnsinoEndpoint)
+      .reply(
+        200,
+        readFileSync("tests/html/teachingPlan.html", "utf-8").toString(),
+      );
+
+    const response = await requestMaker.requestTeachingPlan({
+      cookie: cookie[0],
+      code: "AGR101",
+    });
+
+    expect(response).toHaveProperty("parsedHtml");
+    expect(response.parsedHtml).toHaveProperty("querySelector");
   });
 });

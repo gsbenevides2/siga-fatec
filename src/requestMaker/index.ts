@@ -4,6 +4,7 @@ import { requestPartialAbsences } from "./partialAbsences";
 import { requestPartialNotes } from "./partialNotes";
 import { requestGrade } from "./grade";
 import { requestExamsCalendar } from "./examsCalendar";
+import { requestTeachingPlan } from "./teachingPlan";
 
 export {
   requestLogin,
@@ -12,4 +13,5 @@ export {
   requestPartialNotes,
   requestGrade,
   requestExamsCalendar,
+  requestTeachingPlan,
 };
