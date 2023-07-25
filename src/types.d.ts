@@ -14,6 +14,10 @@ export interface StudentData {
   remainingSemesters: string;
   institutionalEmail: string;
   photoUrl: string;
+  teachingPlans: Array<{
+    name: string;
+    id: string;
+  }>;
 }
 
 export interface Subject {
@@ -81,7 +85,6 @@ export interface ExamSubject {
   name: string;
   exams: Exam[];
 }
-
 
 interface TeachingPlan {
   subjectName: string;

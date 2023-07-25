@@ -1,10 +1,33 @@
 import { type HTMLElement } from "node-html-parser";
-import { fetchSpanText } from "../utils";
+import { fetchGXStateInputValue, fetchSpanText } from "../utils";
 import { type StudentData } from "../types";
 
 type HomePageParsed = StudentData;
 
 export function parseHomePage(page: HTMLElement): HomePageParsed {
+  interface Node {
+    Id: string;
+    Name: string;
+    Nodes?: Node[];
+  }
+  interface GXState {
+    vTREENODECOLLECTIONDATA_MPAGE: Node[];
+  }
+  const gxState: GXState = fetchGXStateInputValue(page, (str) =>
+    str.replaceAll(">", "\\>"),
+  );
+
+  let teachingPlans = gxState.vTREENODECOLLECTIONDATA_MPAGE[0].Nodes?.find(
+    (node) => node.Id === "Planos de Ensino",
+  )?.Nodes?.map((node) => {
+    return {
+      name: node.Name,
+      id: node.Name.split("-")[0],
+    };
+  });
+
+  if (teachingPlans == null) teachingPlans = [];
+
   const spans = page.querySelectorAll("span");
 
   const studentName = fetchSpanText(spans, "PESSOALNOME")
@@ -48,5 +71,6 @@ export function parseHomePage(page: HTMLElement): HomePageParsed {
     remainingSemesters,
     institutionalEmail,
     photoUrl,
+    teachingPlans,
   };
 }

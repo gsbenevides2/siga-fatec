@@ -1,0 +1,27 @@
+{
+  "studentName": "GUILHERME DA SILVA BENEVIDES",
+  "collegeName": "Faculdade de Tecnologia de Mogi das Cruzes",
+  "courseName": "Tecnologia em Análise e Desenvolvimento de Sistemas",
+  "courseState": "Em Curso",
+  "coursePeriod": "Tarde",
+  "courseCycle": "5",
+  "RA": "0256859832458",
+  "PP": "69.04",
+  "PR": "8.93",
+  "maxPR": "0.00",
+  "cursedSemesters": "4",
+  "maxSemesters": "10",
+  "remainingSemesters": "6",
+  "institutionalEmail": "guilherme.benevides@fatec.sp.gov.br",
+  "photoUrl": "https:\\siga.cps.sp.gov.br/image//Q6J4I4ZLWVJXSC3Y2PJ3MGJQYD5DZW.TMB.JPG",
+  "teachingPlans": [
+    { "name": "AGR101-Gestão de Equipes", "id": "AGR101" },
+    { "name": "CEE002-Empreendedorismo", "id": "CEE002" },
+    { "name": "HSO003-Ética e Responsabilidade Profissional", "id": "HSO003" },
+    {
+      "name": "ITE002-Tópicos Especiais em Informática (Escolha 2)",
+      "id": "ITE002"
+    },
+    { "name": "LIN500-Inglês V", "id": "LIN500" }
+  ]
+}

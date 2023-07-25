@@ -8,45 +8,10 @@ describe("HtmlParser", () => {
     const html = readFileSync("tests/html/home.html", "utf-8");
     const parsedHtml = parse(html);
     const result = htmlParser.parseHomePage(parsedHtml);
-
-    expect(result).toHaveProperty("studentName");
-    expect(result.studentName).toBe("GUILHERME DA SILVA BENEVIDES");
-    expect(result).toHaveProperty("collegeName");
-    expect(result.collegeName).toBe(
-      "Faculdade de Tecnologia de Mogi das Cruzes",
+    const content = JSON.parse(
+      readFileSync("tests/json/home.json", "utf-8").toString(),
     );
-    expect(result).toHaveProperty("courseName");
-    expect(result.courseName).toBe(
-      "Tecnologia em Análise e Desenvolvimento de Sistemas",
-    );
-    expect(result).toHaveProperty("courseState");
-    expect(result.courseState).toBe("Em Curso");
-    expect(result).toHaveProperty("coursePeriod");
-    expect(result.coursePeriod).toBe("Tarde");
-    expect(result).toHaveProperty("courseCycle");
-    expect(result.courseCycle).toBe("5");
-    expect(result).toHaveProperty("RA");
-    expect(result.RA).toBe("0256859832458");
-    expect(result).toHaveProperty("PP");
-    expect(result.PP).toBe("69.04");
-    expect(result).toHaveProperty("PR");
-    expect(result.PR).toBe("8.93");
-    expect(result).toHaveProperty("maxPR");
-    expect(result.maxPR).toBe("0.00");
-    expect(result).toHaveProperty("cursedSemesters");
-    expect(result.cursedSemesters).toBe("4");
-    expect(result).toHaveProperty("maxSemesters");
-    expect(result.maxSemesters).toBe("10");
-    expect(result).toHaveProperty("remainingSemesters");
-    expect(result.remainingSemesters).toBe("6");
-    expect(result).toHaveProperty("institutionalEmail");
-    expect(result.institutionalEmail).toBe(
-      "guilherme.benevides@fatec.sp.gov.br",
-    );
-    expect(result).toHaveProperty("photoUrl");
-    expect(result.photoUrl).toBe(
-      "https:\\siga.cps.sp.gov.br/image//Q6J4I4ZLWVJXSC3Y2PJ3MGJQYD5DZW.TMB.JPG",
-    );
+    expect(result).toMatchObject(content);
   });
   it("Fazendo captura de dados da página de home: problema de foto", () => {
     const html = readFileSync("tests/html/home1.html", "utf-8");
@@ -55,6 +20,18 @@ describe("HtmlParser", () => {
     expect(() => htmlParser.parseHomePage(parsedHtml)).toThrow(
       "A foto não foi encontrada.",
     );
+  });
+  it("Fazendo captura de dados da página de home: problema de nodes", () => {
+    const html = readFileSync("tests/html/home3.html", "utf-8");
+    const parsedHtml = parse(html);
+    const result = htmlParser.parseHomePage(parsedHtml);
+    expect(result.teachingPlans).toMatchObject([]);
+  });
+  it("Fazendo captura de dados da página de home: problema de nodes", () => {
+    const html = readFileSync("tests/html/home4.html", "utf-8");
+    const parsedHtml = parse(html);
+    const result = htmlParser.parseHomePage(parsedHtml);
+    expect(result.teachingPlans).toMatchObject([]);
   });
 
   it("Fazendo captura de dados da página de histórico", () => {
