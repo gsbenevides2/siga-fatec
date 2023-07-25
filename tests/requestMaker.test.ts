@@ -14,6 +14,9 @@ const sigaNotasParciaisEndpoint =
 const sigaFaltasParciaisEndpoint =
   "https://siga.cps.sp.gov.br/ALUNO/faltasparciais.aspx";
 const sigaHorarioEndpoint = "https://siga.cps.sp.gov.br/ALUNO/horario.aspx";
+const sigaCalendarioProvasEndpoint =
+  "https://siga.cps.sp.gov.br/ALUNO/calendarioprovas.aspx";
+
 const cookie = ["ASP.NET_SessionId=1234567890; path=/; HttpOnly"];
 
 describe("RequestMaker", () => {
@@ -161,17 +164,16 @@ describe("RequestMaker", () => {
     expect(fullHistoryData.parsedHtml).toHaveProperty("querySelector");
   });
 
-  /*
   it("Esperando que a requisição a página de calendário de provas seja um sucesso", async () => {
-    const cookie = "ASP.NET_SessionId=1234567890; path=/; HttpOnly";
     mock
-      .onGet(sigaHorarioEndpoint)
+      .onGet(sigaCalendarioProvasEndpoint)
       .reply(200, readFileSync("tests/html/grade.html", "utf-8").toString());
 
-    const fullHistoryData = await requestMaker.requestGrade({ cookie });
+    const fullHistoryData = await requestMaker.requestExamsCalendar({
+      cookie: cookie[0],
+    });
 
     expect(fullHistoryData).toHaveProperty("parsedHtml");
     expect(fullHistoryData.parsedHtml).toHaveProperty("querySelector");
   });
-  */
 });
