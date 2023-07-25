@@ -14,11 +14,12 @@ const sigaNotasParciaisEndpoint =
 const sigaFaltasParciaisEndpoint =
   "https://siga.cps.sp.gov.br/ALUNO/faltasparciais.aspx";
 const sigaHorarioEndpoint = "https://siga.cps.sp.gov.br/ALUNO/horario.aspx";
+const cookie = ["ASP.NET_SessionId=1234567890; path=/; HttpOnly"];
 
 describe("RequestMaker", () => {
   it("Esperando que o login seja um sucesso", async () => {
     mock.onGet(sigaAlunoEndpoint).reply(200, "", {
-      "set-cookie": ["ASP.NET_SessionId=1234567890; path=/; HttpOnly"],
+      "set-cookie": cookie,
     });
 
     mock
@@ -37,9 +38,7 @@ describe("RequestMaker", () => {
   });
 
   it("Esperando que o login seja um erro: sem cookies de sessão", async () => {
-    mock.onGet(sigaAlunoEndpoint).reply(200, "", {
-      // "set-cookie": ["ASP.NET_SessionId=1234567890; path=/; HttpOnly"],
-    });
+    mock.onGet(sigaAlunoEndpoint).reply(200, "", {});
     await expect(
       requestMaker.requestLogin({
         username,
@@ -50,7 +49,7 @@ describe("RequestMaker", () => {
 
   it("Esperando que o login seja um erro: sem meta tag Description", async () => {
     mock.onGet(sigaAlunoEndpoint).reply(200, "", {
-      "set-cookie": ["ASP.NET_SessionId=1234567890; path=/; HttpOnly"],
+      "set-cookie": cookie,
     });
 
     mock
@@ -67,7 +66,7 @@ describe("RequestMaker", () => {
 
   it("Esperando que o login seja um erro: sem conteúdo na meta tag Description", async () => {
     mock.onGet(sigaAlunoEndpoint).reply(200, "", {
-      "set-cookie": ["ASP.NET_SessionId=1234567890; path=/; HttpOnly"],
+      "set-cookie": cookie,
     });
 
     mock
@@ -86,7 +85,7 @@ describe("RequestMaker", () => {
 
   it("Esperando que o login seja um erro: sem a palavra 'home' na meta tag Description ou seja dados incorretos", async () => {
     mock.onGet(sigaAlunoEndpoint).reply(200, "", {
-      "set-cookie": ["ASP.NET_SessionId=1234567890; path=/; HttpOnly"],
+      "set-cookie": cookie,
     });
 
     mock
@@ -104,19 +103,19 @@ describe("RequestMaker", () => {
   });
 
   it("Esperando que a requisção ao histórico seja um sucesso", async () => {
-    const cookie = "ASP.NET_SessionId=1234567890; path=/; HttpOnly";
     mock
       .onGet(sigaHistoricoEndpoint)
       .reply(200, readFileSync("tests/html/history.html", "utf-8").toString());
 
-    const historyData = await requestMaker.requestHistory({ cookie });
+    const historyData = await requestMaker.requestHistory({
+      cookie: cookie[0],
+    });
 
     expect(historyData).toHaveProperty("parsedHtml");
     expect(historyData.parsedHtml).toHaveProperty("querySelector");
   });
 
   it("Esperando que a requisção ao notas parciais seja um sucesso", async () => {
-    const cookie = "ASP.NET_SessionId=1234567890; path=/; HttpOnly";
     mock
       .onGet(sigaNotasParciaisEndpoint)
       .reply(
@@ -124,14 +123,15 @@ describe("RequestMaker", () => {
         readFileSync("tests/html/partialNotes.html", "utf-8").toString(),
       );
 
-    const partialNotesData = await requestMaker.requestPartialNotes({ cookie });
+    const partialNotesData = await requestMaker.requestPartialNotes({
+      cookie: cookie[0],
+    });
 
     expect(partialNotesData).toHaveProperty("parsedHtml");
     expect(partialNotesData.parsedHtml).toHaveProperty("querySelector");
   });
 
   it("Esperando que a requisção ao faltas parciais seja um sucesso", async () => {
-    const cookie = "ASP.NET_SessionId=1234567890; path=/; HttpOnly";
     mock
       .onGet(sigaFaltasParciaisEndpoint)
       .reply(
@@ -140,7 +140,7 @@ describe("RequestMaker", () => {
       );
 
     const partialAbsencesData = await requestMaker.requestPartialAbsences({
-      cookie,
+      cookie: cookie[0],
     });
 
     expect(partialAbsencesData).toHaveProperty("parsedHtml");
@@ -153,9 +153,25 @@ describe("RequestMaker", () => {
       .onGet(sigaHorarioEndpoint)
       .reply(200, readFileSync("tests/html/grade.html", "utf-8").toString());
 
+    const fullHistoryData = await requestMaker.requestGrade({
+      cookie: cookie[0],
+    });
+
+    expect(fullHistoryData).toHaveProperty("parsedHtml");
+    expect(fullHistoryData.parsedHtml).toHaveProperty("querySelector");
+  });
+
+  /*
+  it("Esperando que a requisição a página de calendário de provas seja um sucesso", async () => {
+    const cookie = "ASP.NET_SessionId=1234567890; path=/; HttpOnly";
+    mock
+      .onGet(sigaHorarioEndpoint)
+      .reply(200, readFileSync("tests/html/grade.html", "utf-8").toString());
+
     const fullHistoryData = await requestMaker.requestGrade({ cookie });
 
     expect(fullHistoryData).toHaveProperty("parsedHtml");
     expect(fullHistoryData.parsedHtml).toHaveProperty("querySelector");
   });
+  */
 });
