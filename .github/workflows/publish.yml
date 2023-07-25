@@ -19,6 +19,7 @@ jobs:
         env:
           SIGA_USERNAME: ${{ secrets.SIGA_USERNAME }}
           SIGA_PASSWORD: ${{ secrets.SIGA_PASSWORD }}
+          SIGA_CLASS_CODE: ${{ secrets.SIGA_CLASS_CODE }}
       - run: npm run build
       - run: npm publish
         env:
