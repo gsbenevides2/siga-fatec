@@ -82,6 +82,4 @@ export interface ExamSubject {
   exams: Exam[];
 }
 
-export interface ExamsCalendar {
-  subjects: ExamSubject[];
-}
+
