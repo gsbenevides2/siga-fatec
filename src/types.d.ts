@@ -70,3 +70,18 @@ export interface LoginParams {
   password: string;
   cookie?: string;
 }
+
+export interface Exam {
+  name: string;
+  date: string;
+}
+
+export interface ExamSubject {
+  code: string;
+  name: string;
+  exams: Exam[];
+}
+
+export interface ExamsCalendar {
+  subjects: ExamSubject[];
+}

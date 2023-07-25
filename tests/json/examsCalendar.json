@@ -1,0 +1,24 @@
+[
+  { "code": "AGR101", "name": "Gestão de Equipes", "exams": [] },
+  { "code": "CEE002", "name": "Empreendedorismo", "exams": [] },
+  {
+    "code": "HSO003",
+    "name": "Ética e Responsabilidade Profissional",
+    "exams": []
+  },
+  {
+    "code": "ITE002",
+    "name": "Tópicos Especiais em Informática (Escolha 2)",
+    "exams": []
+  },
+  {
+    "code": "LIN500",
+    "name": "Inglês V",
+    "exams": [
+      {
+        "date": "18/18/18",
+        "name": "P1"
+      }
+    ]
+  }
+]

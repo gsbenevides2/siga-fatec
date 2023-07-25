@@ -26,7 +26,7 @@ describe("HtmlParser", () => {
     expect(result).toHaveProperty("courseCycle");
     expect(result.courseCycle).toBe("5");
     expect(result).toHaveProperty("RA");
-    expect(result.RA).toBe("1840482122005");
+    expect(result.RA).toBe("0256859832458");
     expect(result).toHaveProperty("PP");
     expect(result.PP).toBe("69.04");
     expect(result).toHaveProperty("PR");
@@ -109,6 +109,16 @@ describe("HtmlParser", () => {
     const result = htmlParser.parsePartialNotesPage(parsedHtml);
     const content = JSON.parse(
       readFileSync("tests/json/partialNotes.json", "utf-8").toString(),
+    );
+    expect(result).toMatchObject(content);
+  });
+
+  it("Fazendo captura de dados da página de calendário de provas", () => {
+    const html = readFileSync("tests/html/examsCalendar.html", "utf-8");
+    const parsedHtml = parse(html);
+    const result = htmlParser.parseExamsCalendarPage(parsedHtml);
+    const content = JSON.parse(
+      readFileSync("tests/json/examsCalendar.json", "utf-8").toString(),
     );
     expect(result).toMatchObject(content);
   });
