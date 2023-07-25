@@ -6,6 +6,7 @@ import {
   type PartialNoteSubject,
   type LoginParams,
   type ExamSubject,
+  type TeachingPlan,
 } from "./types";
 import * as requestMaker from "./requestMaker";
 import * as htmlParser from "./htmlParser";
@@ -74,5 +75,13 @@ export class Siga {
       cookie: this.cookie,
     });
     return htmlParser.parseExamsCalendarPage(parsedHtml);
+  }
+
+  public async getTeachingPlan(code: string): Promise<TeachingPlan> {
+    const { parsedHtml } = await requestMaker.requestTeachingPlan({
+      cookie: this.cookie,
+      code,
+    });
+    return htmlParser.parseTeachingPlanPage(parsedHtml);
   }
 }

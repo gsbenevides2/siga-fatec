@@ -5,9 +5,14 @@ config({
   path: ".env.test",
 });
 
-const { SIGA_USERNAME: username, SIGA_PASSWORD: password } = process.env as {
+const {
+  SIGA_USERNAME: username,
+  SIGA_PASSWORD: password,
+  SIGA_CLASS_CODE: classCode,
+} = process.env as {
   SIGA_USERNAME: string;
   SIGA_PASSWORD: string;
+  SIGA_CLASS_CODE: string;
 };
 
 const timeOut = 100000;
@@ -117,4 +122,15 @@ describe("Siga: Testes de integração", () => {
     },
     timeOut * 2,
   );
+
+  it("Esperando que retorne o plano de ensino", async () => {
+    const siga = await Siga.login({
+      username,
+      password,
+    });
+
+    const teachingPlan = await siga.getTeachingPlan(classCode);
+
+    expect(teachingPlan.subjectCode).toBe(classCode);
+  });
 });
