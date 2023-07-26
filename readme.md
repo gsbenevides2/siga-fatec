@@ -2,11 +2,11 @@
     Siga Fatec
 </h1>
 <p align="center">
-<img src="https://img.shields.io/badge/Typescript-E02041?style=for-the-badge&logo=typescript&logoColor=white">
-<img src="https://img.shields.io/badge/Axios-E02041?style=for-the-badge&logo=axios&logoColor=white">
-<img src="https://img.shields.io/badge/Yarn-E02041?style=for-the-badge&logo=yarn&logoColor=white">
-<img src="https://img.shields.io/badge/NodeJS-E02041?style=for-the-badge&logo=nodedotjs&logoColor=white">
-<img src="https://img.shields.io/badge/Jest-E02041?style=for-the-badge&logo=jest&logoColor=white">
+<img src="https://img.shields.io/badge/Typescript-b20000?style=for-the-badge&logo=typescript&logoColor=white">
+<img src="https://img.shields.io/badge/Axios-b20000?style=for-the-badge&logo=axios&logoColor=white">
+<img src="https://img.shields.io/badge/Yarn-b20000?style=for-the-badge&logo=yarn&logoColor=white">
+<img src="https://img.shields.io/badge/NodeJS-b20000?style=for-the-badge&logo=nodedotjs&logoColor=white">
+<img src="https://img.shields.io/badge/Jest-b20000?style=for-the-badge&logo=jest&logoColor=white">
 </p>
 <p align="justify">
 Um SDK que possibilita fazer a raspagem de dados do site do Sistema Integrado de Gestão Acadêmica (SIGA) da Faculdade de Tecnologia de São Paulo (FATEC-SP).
