@@ -7,8 +7,8 @@ interface ParsedData {
     ACD_DisciplinaSigla: string;
     ACD_DisciplinaNome: string;
     Datas: Array<{
-      ACD_AvaliacaoNome: string;
-      ACD_AvaliacaoData: string;
+      ACD_PlanoEnsinoAvaliacaoTitulo: string;
+      ACD_PlanoEnsinoAvaliacaoDataPrevista: string;
     }>;
   }>;
 }
@@ -24,8 +24,8 @@ export function parseExamsCalendarPage(page: HTMLElement): ExamSubject[] {
       name: subject.ACD_DisciplinaNome,
       exams: subject.Datas.map((exam) => {
         return {
-          name: exam.ACD_AvaliacaoNome,
-          date: exam.ACD_AvaliacaoData,
+          name: exam.ACD_PlanoEnsinoAvaliacaoTitulo,
+          date: exam.ACD_PlanoEnsinoAvaliacaoDataPrevista,
         };
       }),
     };
